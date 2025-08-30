@@ -7,13 +7,12 @@ export default function EditReservationScreen({ route, navigation }) {
 
   const [date, setDate] = useState(reservation.date);
   const [time, setTime] = useState(reservation.time);
-  const [peopleCount, setPeopleCount] = useState(reservation.people_count.toString());
 
   const handleUpdate = async () => {
     try {
       await axios.put(
         `http://192.168.100.77:3000/api/reservations/${reservation.reservation_id}`,
-        { date, time, people_count: peopleCount },
+        { date, time },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       Alert.alert("Επιτυχία", "Η κράτηση ενημερώθηκε!");
@@ -31,14 +30,6 @@ export default function EditReservationScreen({ route, navigation }) {
 
       <Text style={styles.label}>Ώρα:</Text>
       <TextInput style={styles.input} value={time} onChangeText={setTime} />
-
-      <Text style={styles.label}>Άτομα:</Text>
-      <TextInput
-        style={styles.input}
-        value={peopleCount}
-        onChangeText={setPeopleCount}
-        keyboardType="numeric"
-      />
 
       <TouchableOpacity style={styles.button} onPress={handleUpdate}>
         <Text style={styles.buttonText}>Αποθήκευση</Text>

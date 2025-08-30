@@ -3,17 +3,19 @@ import { View, TextInput, Text, StyleSheet, Alert, TouchableOpacity } from 'reac
 import axios from 'axios';
 
 export default function RegisterScreen({ navigation }) {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleRegister = async () => {
-    if (!email || !password) {
-      Alert.alert('Σφάλμα', 'Παρακαλώ συμπλήρωσε email και password');
+    if (!name || !email || !password) {
+      Alert.alert('Σφάλμα', 'Παρακαλώ συμπλήρωσε όνομα, email και password');
       return;
     }
 
     try {
-      const res = await axios.post('http://192.168.100.77:3000/api/auth/register', {
+      await axios.post('http://192.168.100.77:3000/api/auth/register', {
+        name,
         email,
         password
       });
@@ -29,6 +31,13 @@ export default function RegisterScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Εγγραφή</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Όνομα"
+        value={name}
+        onChangeText={setName}
+      />
 
       <TextInput
         style={styles.input}

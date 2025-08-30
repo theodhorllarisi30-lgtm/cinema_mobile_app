@@ -7,18 +7,18 @@ const router = express.Router();
 
 // Εγγραφή
 router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email και password είναι υποχρεωτικά' });
+  if (!name || !email || !password) {
+    return res.status(400).json({ error: 'Όνομα, email και password είναι υποχρεωτικά' });
   }
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const [result] = await pool.query(
-      'INSERT INTO users (email, password) VALUES (?, ?)',
-      [email, hashedPassword]
+      'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
+      [name, email, hashedPassword]
     );
 
     res.json({ message: 'Ο χρήστης δημιουργήθηκε!', user_id: result.insertId });

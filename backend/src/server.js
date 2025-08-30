@@ -16,8 +16,8 @@ app.get('/api/health', (req, res) => {
 
 const reservationRoutes = require('./routes/reservations');
 app.use('/api/reservations', reservationRoutes);
-const restaurantRoutes = require('./routes/restaurants');
-app.use('/api/restaurants', restaurantRoutes);
+const cinemasRouter = require('./routes/cinemas');
+app.use('/api/cinemas', cinemasRouter);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

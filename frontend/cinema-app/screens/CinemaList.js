@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 
-export default function RestaurantList({ route, navigation }) {
+export default function CinemaList({ route, navigation }) {
   const { token } = route.params;
-  const [restaurants, setRestaurants] = useState([]);
+  const [cinemas, setCinemas] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchRestaurants = async () => {
+    const fetchCinemas = async () => {
       try {
-        const res = await axios.get('http://192.168.100.77:3000/api/restaurants', {
+        const res = await axios.get('http://192.168.100.77:3000/api/cinemas', {
           headers: { Authorization: `Bearer ${token}` }
         });
-        setRestaurants(res.data);
+        setCinemas(res.data);
       } catch (err) {
         console.error(err);
       } finally {
@@ -21,7 +21,7 @@ export default function RestaurantList({ route, navigation }) {
       }
     };
 
-    fetchRestaurants();
+    fetchCinemas();
   }, []);
 
   if (loading) {
@@ -35,8 +35,6 @@ export default function RestaurantList({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      
-      {/* Logout button */}
       <TouchableOpacity 
         style={[styles.button, { backgroundColor: '#E53935' }]} 
         onPress={() => navigation.replace("Login")}
@@ -44,7 +42,6 @@ export default function RestaurantList({ route, navigation }) {
         <Text style={styles.buttonText}>Αποσύνδεση</Text>
       </TouchableOpacity>
 
-      {/* My Reservations button */}
       <TouchableOpacity 
         style={[styles.button, { backgroundColor: '#5bc0de' }]} 
         onPress={() => navigation.navigate('MyReservations', { token })}
@@ -52,10 +49,9 @@ export default function RestaurantList({ route, navigation }) {
         <Text style={styles.buttonText}>Οι κρατήσεις μου</Text>
       </TouchableOpacity>
 
-      {/* Restaurant list */}
       <FlatList
-        data={restaurants}
-        keyExtractor={(item) => item.restaurant_id.toString()}
+        data={cinemas}
+        keyExtractor={(item) => item.cinema_id.toString()}
         renderItem={({ item }) => (
           <View style={styles.card}>
             <Text style={styles.name}>{item.name}</Text>
@@ -64,7 +60,7 @@ export default function RestaurantList({ route, navigation }) {
 
             <TouchableOpacity 
               style={[styles.button, { backgroundColor: '#5cb85c', marginTop: 10 }]}
-              onPress={() => navigation.navigate('Reservation', { token, restaurant_id: item.restaurant_id })}
+              onPress={() => navigation.navigate('Reservation', { token, cinema_id: item.cinema_id })}
             >
               <Text style={styles.buttonText}>Κάνε κράτηση</Text>
             </TouchableOpacity>

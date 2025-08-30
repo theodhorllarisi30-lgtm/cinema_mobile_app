@@ -28,9 +28,8 @@ export default function MyReservationsScreen({ route, navigation }) {
         keyExtractor={(item) => item.reservation_id.toString()}
         renderItem={({ item }) => (
           <View style={styles.card}>
-            <Text style={styles.name}>{item.restaurant_name}</Text>
+            <Text style={styles.name}>{item.movie_title}</Text>
             <Text style={styles.location}>{item.date} | {item.time}</Text>
-            <Text style={styles.description}>Άτομα: {item.people_count}</Text>
 
             <TouchableOpacity 
               style={[styles.button, { backgroundColor: '#E53935' }]}

@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen'; 
-import RestaurantList from './screens/RestaurantList';
+import CinemaList from './screens/CinemaList';
 import ReservationScreen from './screens/ReservationScreen';
 import MyReservationsScreen from './screens/MyReservationsScreen';
 import EditReservationScreen from './screens/EditReservationScreen';
@@ -17,10 +17,10 @@ export default function App() {
       <Stack.Navigator initialRouteName="Register">
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-		<Stack.Screen name="Restaurants" component={RestaurantList} options={{ headerLeft: null }}   />
-		<Stack.Screen name="Reservation" component={ReservationScreen} />
-		<Stack.Screen name="MyReservations" component={MyReservationsScreen} />
-		<Stack.Screen name="EditReservation" component={EditReservationScreen} />
+        <Stack.Screen name="Cinemas" component={CinemaList} options={{ headerLeft: null }} />
+        <Stack.Screen name="Reservations" component={ReservationScreen} />
+        <Stack.Screen name="MyReservations" component={MyReservationsScreen} />
+        <Stack.Screen name="EditReservation" component={EditReservationScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

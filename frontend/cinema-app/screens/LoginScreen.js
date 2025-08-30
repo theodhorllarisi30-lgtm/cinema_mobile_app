@@ -20,7 +20,7 @@ export default function LoginScreen({ navigation }) {
 
       const token = res.data.token;
       Alert.alert('Επιτυχία', 'Συνδεθήκατε επιτυχώς');
-      navigation.navigate('Restaurants', { token });
+      navigation.navigate('Cinemas', { token });
     } catch (err) {
       console.error(err);
       Alert.alert('Σφάλμα', err.response?.data?.error || 'Κάτι πήγε λάθος');
