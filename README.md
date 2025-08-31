@@ -40,7 +40,7 @@ Backend
 
 - Κλωνοποίηση του repository: `git clone git clone https://github.com/theodhorllarisi30-lgtm/cinema_mobile_app.git
 `
-- Μετακίνηση στον φάκελο backend: `cd backend`
+- Μετακίνηση στον φάκελο backend: `cd cinema_mobile_app/backend`
 - Εγκατάσταση των dependencies: `npm install`
 - Δημιουργία αρχείου .env στον φάκελο backend με τις παρακάτω ρυθμίσεις:
   ```env
@@ -50,7 +50,13 @@ Backend
   DB_NAME=cinema_booking
   JWT_SECRET=ένα_τυχαίο_κλειδί
   ```
-- Ρύθμιση της βάσης δεδομένων: `mysql -u root -p cinema_booking < database/cinema_booking.sql`
+- Ρύθμιση της βάσης δεδομένων μέσω terminal: `mysql -u root -p cinema_booking < backend/database/cinema_booking.sql`
+- Μέσω phpMyAdmin
+    Ανοίξτε το phpMyAdmin με XAMPP
+    Δημιουργήστε μια νέα βάση δεδομένων με όνομα `cinema_booking`
+    Επιλέξτε τη βάση και πατήστε Import
+    Επιλέξτε το αρχείο SQL: `backend/database/cinema_booking.sql`
+    Πατήστε Go για να εισαχθούν τα δεδομένα
 
 ---
 
@@ -59,6 +65,7 @@ Frontend
 - Μετακίνηση στον φάκελο frontend μέσω cmd: `cd frontend`
 - Εγκαταστήστε τα dependencies: `npm install`
 - Εκτέλεση της εφαρμογής μέσω Expo: `npm start`
+- Σκανάρετε το QR code με το Expo Go app στο κινητό ή τρέξτε τον emulator.
 
 Οδηγίες Εκτέλεσης
 
