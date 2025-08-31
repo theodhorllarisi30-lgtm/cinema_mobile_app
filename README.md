@@ -40,6 +40,14 @@ Backend
 - Κλωνοποίηση του repository: `git clone <URL του repository>`
 - Μετακίνηση στον φάκελο backend: `cd backend`
 - Εγκατάσταση των dependencies: `npm install`
+- Δημιουργία αρχείου .env στον φάκελο backend με τις παρακάτω ρυθμίσεις:
+  ```env
+  DB_HOST=localhost
+  DB_USER=root
+  DB_PASSWORD=το_δικό_σας_password
+  DB_NAME=cinema_booking
+  JWT_SECRET=ένα_τυχαίο_κλειδί
+  ```
 - Ρύθμιση της βάσης δεδομένων: `mysql -u root -p cinema_booking < database/cinema_booking.sql`
 
 ---
