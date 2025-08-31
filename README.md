@@ -56,9 +56,12 @@ Backend
 Frontend
 
 - Μετακίνηση στον φάκελο frontend μέσω cmd: `cd frontend`
+- Εγκαταστήστε τα dependencies: `npm install`
 - Εκτέλεση της εφαρμογής μέσω Expo: `npm start`
 
+Οδηγίες Εκτέλεσης
 
-- Μετακίνηση στον φάκελο backend μέσω cmd: `node src/server.js`
-- Frontend: Σκανάρετε και τρέχετε με Expo και ανοίγετε το app στο κινητό ή σε emulator.
+- Τρέξτε πρώτα τον backend server: `cd backend → node src/server.js`.
+- Στη συνέχεια τρέξτε το frontend μέσω Expo: Σκανάρετε το QR code με το Expo Go app στο κινητό ή χρησιμοποιήστε emulator.
+- Βεβαιωθείτε ότι το κινητό και ο backend server βρίσκονται στο ίδιο δίκτυο, ώστε να μπορεί η εφαρμογή να επικοινωνεί με το API.
 
