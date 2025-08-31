@@ -1,4 +1,5 @@
 Cinema Booking App
+
 Περιγραφή
 
 Η εφαρμογή Cinema Booking App επιτρέπει στους χρήστες να περιηγηθούν σε διαθέσιμα σινεμά, να δουν τις ταινίες που προβάλλονται σε κάθε σινεμά και να κάνουν κρατήσεις για συγκεκριμένη ημερομηνία και ώρα. Η εφαρμογή διαθέτει τόσο frontend (React Native) όσο και backend (Node.js με Express και MySQL).
@@ -30,10 +31,10 @@ MySQL ή MariaDB
 
 Expo CLI για το frontend
 
+---
 
 Οδηγίες Εγκατάστασης
 
----
 
 Backend
 
@@ -54,13 +55,10 @@ Backend
 
 Frontend
 
-- Μετακίνηση στον φάκελο frontend: `cd frontend`
+- Μετακίνηση στον φάκελο frontend μέσω cmd: `cd frontend`
 - Εκτέλεση της εφαρμογής μέσω Expo: `npm start`
 
----
 
-Οδηγίες Εκτέλεσης
-
-- Backend: `node src/server.js`
+- Μετακίνηση στον φάκελο backend μέσω cmd: `node src/server.js`
 - Frontend: Σκανάρετε και τρέχετε με Expo και ανοίγετε το app στο κινητό ή σε emulator.
 
