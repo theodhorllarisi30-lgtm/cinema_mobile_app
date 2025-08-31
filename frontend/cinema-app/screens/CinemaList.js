@@ -60,7 +60,7 @@ export default function CinemaList({ route, navigation }) {
 
             <TouchableOpacity 
               style={[styles.button, { backgroundColor: '#5cb85c', marginTop: 10 }]}
-              onPress={() => navigation.navigate('Reservation', { token, cinema_id: item.cinema_id })}
+              onPress={() => navigation.navigate('Reservations', { token, cinema_id: item.cinema_id })}
             >
               <Text style={styles.buttonText}>Κάνε κράτηση</Text>
             </TouchableOpacity>
