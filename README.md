@@ -22,7 +22,7 @@ Cinema Booking App
 Προβολή των προσωπικών κρατήσεων του χρήστη.
 
 Σύνδεση και αποσύνδεση χρηστών μέσω token.
-
+---
 Προαπαιτούμενα
 
 Node.js
@@ -52,11 +52,11 @@ Backend
   ```
 - Ρύθμιση της βάσης δεδομένων μέσω terminal: `mysql -u root -p cinema_booking < backend/database/cinema_booking.sql`
 - Μέσω phpMyAdmin
-    Ανοίξτε το phpMyAdmin με XAMPP
-    Δημιουργήστε μια νέα βάση δεδομένων με όνομα `cinema_booking`
-    Επιλέξτε τη βάση και πατήστε Import
-    Επιλέξτε το αρχείο SQL: `backend/database/cinema_booking.sql`
-    Πατήστε Go για να εισαχθούν τα δεδομένα
+    Ανοίξτε το phpMyAdmin με XAMPP. 
+    Δημιουργήστε μια νέα βάση δεδομένων με όνομα `cinema_booking`. 
+    Επιλέξτε τη βάση και πατήστε Import. 
+    Επιλέξτε το αρχείο SQL: `backend/database/cinema_booking.sql`. 
+    Πατήστε Go για να εισαχθούν τα δεδομένα.
 
 ---
 
@@ -70,5 +70,5 @@ Frontend
 Οδηγίες Εκτέλεσης
 
 - Τρέξτε πρώτα τον backend server: `cd backend → node src/server.js`.
-- Στη συνέχεια τρέξτε το frontend μέσω Expo: Σκανάρετε το QR code με το Expo Go app στο κινητό ή χρησιμοποιήστε emulator.
+- Στη συνέχεια τρέξτε το frontend μέσω Expo `npm start`: Σκανάρετε το QR code με το Expo Go app στο κινητό ή χρησιμοποιήστε emulator.
 - Βεβαιωθείτε ότι το κινητό και ο backend server βρίσκονται στο ίδιο δίκτυο, ώστε να μπορεί η εφαρμογή να επικοινωνεί με το API.
