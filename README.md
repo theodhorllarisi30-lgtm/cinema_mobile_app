@@ -38,7 +38,8 @@ Expo CLI για το frontend
 
 Backend
 
-- Κλωνοποίηση του repository: `git clone <URL του repository>`
+- Κλωνοποίηση του repository: `git clone git clone https://github.com/theodhorllarisi30-lgtm/cinema_mobile_app.git
+`
 - Μετακίνηση στον φάκελο backend: `cd backend`
 - Εγκατάσταση των dependencies: `npm install`
 - Δημιουργία αρχείου .env στον φάκελο backend με τις παρακάτω ρυθμίσεις:
